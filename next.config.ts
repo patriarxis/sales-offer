@@ -16,16 +16,15 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
+    const robotsTag = {
+      key: "X-Robots-Tag",
+      value:
+        "none, noindex, nofollow, noarchive, nosnippet, noimageindex, nocache, notranslate, nositelinkssearchbox, noai, noimageai, max-snippet:0, max-image-preview:none, max-video-preview:0",
+    };
+
     return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "X-Robots-Tag",
-            value: "noindex, nofollow, noarchive, nosnippet, noimageindex",
-          },
-        ],
-      },
+      { source: "/", headers: [robotsTag] },
+      { source: "/:path*", headers: [robotsTag] },
     ];
   },
 };

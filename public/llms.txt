@@ -1,0 +1,5 @@
+# This site does not grant permission to crawl, index, scrape,
+# or use any content as AI training or inference data.
+
+User-Agent: *
+Disallow: /
