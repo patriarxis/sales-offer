@@ -1,0 +1,44 @@
+@use "../abstracts/index" as *;
+
+::selection {
+  background: $brand-5;
+  color: $neutral-white;
+}
+
+:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+textarea,
+select {
+  @include p-base;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border: none;
+  height: 0;
+  background-color: transparent;
+}

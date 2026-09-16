@@ -1,0 +1,38 @@
+@use "../../../styles/abstracts/index" as *;
+
+.switcher {
+  flex-shrink: 0;
+}
+
+.list {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  list-style: none;
+  border-radius: $radius-full;
+  @include page-dot-canvas;
+}
+
+.item {
+  display: inline-flex;
+}
+
+.link {
+  @include pill;
+  padding: 0.3rem 0.7rem;
+  color: $neutral-white-60;
+  transition:
+    color $transition-normal,
+    background-color $transition-normal;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $neutral-white;
+    }
+  }
+}
+
+.active {
+  background: $neutral-1;
+}

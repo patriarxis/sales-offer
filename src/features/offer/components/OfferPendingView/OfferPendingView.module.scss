@@ -1,0 +1,35 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.offerCard {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  width: 100%;
+  max-width: $max-width-lg;
+  padding: $spacing-lg;
+  background: rgba($neutral-1, 0.5);
+  backdrop-filter: blur(0.5rem);
+  border: 1px solid $neutral-white-10;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-xl;
+}
+
+.salesSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.salesSectionCopy {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.salesSectionTitle {
+  margin: 0;
+}
+
+.salesSectionDescription {
+  color: $neutral-7;
+}

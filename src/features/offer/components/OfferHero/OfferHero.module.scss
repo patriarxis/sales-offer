@@ -1,0 +1,61 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: $spacing-2xl 0;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-2xl;
+  text-align: center;
+  width: 100%;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  text-align: center;
+}
+
+.resultIcon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  @include flex-center;
+  margin-bottom: $spacing-xs;
+  border: 1px solid currentColor;
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.successIcon {
+  background: $success-bg;
+  color: $success;
+  @include status-icon-glow($success);
+  @include backdrop-blur;
+}
+
+.dangerIcon {
+  background: rgba($danger, 0.12);
+  color: $danger;
+  @include status-icon-glow($danger);
+  @include backdrop-blur;
+}
+
+.pageTitle {
+  @include gradient-text($neutral-white, $brand-5);
+}
+
+.dangerPageTitle {
+  @include gradient-text($neutral-white, $danger);
+}

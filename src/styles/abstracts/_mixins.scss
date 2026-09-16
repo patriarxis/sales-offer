@@ -1,0 +1,301 @@
+@use "variables" as *;
+
+// ---------------------------------------------------------------------------
+// Breakpoint mixins — canonical names (sm-up/md-up/lg-up + below) plus the
+// app's existing aliases so component churn stays minimal.
+// ---------------------------------------------------------------------------
+
+@mixin sm-up {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin below-md {
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @include below-md {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @include sm-up {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-tablet-up {
+  @include md-up {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @include lg-up {
+    @content;
+  }
+}
+
+@mixin large-desktop-up {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include mobile-only {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Surfaces / layout helpers
+// ---------------------------------------------------------------------------
+
+@mixin glass($opacity: 0.2) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($surface-blur);
+  border: 1px solid $neutral-white-10;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ---------------------------------------------------------------------------
+// Buttons
+// ---------------------------------------------------------------------------
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: $radius-full;
+  font-family: $font-primary;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-normal;
+  white-space: nowrap;
+  user-select: none;
+
+  &:focus-visible {
+    outline: 2px solid $brand-3;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+@mixin button-size-sm {
+  padding: $spacing-xs $spacing-sm;
+  gap: $spacing-2xs;
+  font-size: $font-size-sm;
+  min-height: 32px;
+}
+
+@mixin button-size-md {
+  padding: $spacing-sm $spacing-md;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  min-height: 40px;
+}
+
+@mixin button-size-lg {
+  padding: $spacing-md $spacing-lg;
+  gap: $spacing-sm;
+  font-size: $font-size-base;
+  min-height: 48px;
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $brand-1;
+  color: $neutral-white;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: $shadow-sm;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: $brand-2;
+  color: $neutral-white;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: $shadow-sm;
+  }
+}
+
+@mixin button-danger {
+  @include button-base;
+  background-color: $danger-1;
+  color: $neutral-white;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: $shadow-sm;
+  }
+}
+
+@mixin button-inverse {
+  @include button-base;
+  background-color: $neutral-white;
+  color: $brand-1;
+
+  &:hover:not(:disabled) {
+    background-color: $brand-5;
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: $shadow-sm;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Typography roles (app scale: extrabold headings, medium-weight paragraphs)
+// ---------------------------------------------------------------------------
+
+@mixin h1 {
+  font-family: $font-primary;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+}
+
+@mixin h2 {
+  font-family: $font-primary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+}
+
+@mixin h3 {
+  font-family: $font-primary;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+@mixin h4 {
+  font-family: $font-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+@mixin h5 {
+  font-family: $font-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+@mixin h6 {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+@mixin p-lg {
+  font-family: $font-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-relaxed;
+}
+
+@mixin p-base {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-lg;
+}
+
+@mixin p-sm {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-lg;
+}
+
+@mixin p-xs {
+  font-family: $font-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-lg;
+}
+
+@mixin label {
+  font-family: $font-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-sm;
+}
+
+@mixin label-sm {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-sm;
+}

@@ -1,0 +1,51 @@
+@use "../../../styles/abstracts/index" as *;
+
+.countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  background: $neutral-white-05;
+  padding: $spacing-2xs $spacing-sm $spacing-2xs $spacing-xs;
+  border-radius: $radius-full;
+  white-space: nowrap;
+  color: $neutral-white-80;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  line-height: 1;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.panel {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  flex-shrink: 0;
+}
+
+.segment {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.digits {
+  display: inline-block;
+  font-size: var(--countdown-digit-font-size, #{$font-size-sm});
+  font-weight: $font-weight-extrabold;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  min-width: 2ch;
+}
+
+.unit {
+  text-transform: lowercase;
+}
+
+.expired {
+  color: $danger;
+}

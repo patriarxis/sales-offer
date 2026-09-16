@@ -1,0 +1,140 @@
+@use "../../../styles/abstracts/index" as *;
+
+.button {
+  @include button-base;
+  gap: $spacing-2xs;
+  font-weight: $font-weight-bold;
+
+  &:disabled,
+  &.loading {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(0.5);
+    pointer-events: none;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.size_sm {
+  padding: $spacing-2xs $spacing-xs;
+  font-size: $font-size-sm;
+  min-height: 2rem;
+
+  .icon > * {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.size_md {
+  padding: $spacing-xs $spacing-sm $spacing-xs $spacing-xs;
+  font-size: $font-size-sm;
+  min-height: 2.5rem;
+
+  .icon > * {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.size_lg {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-base;
+  min-height: 3rem;
+
+  .icon > * {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.variant_primary {
+  background: $gradient-brand-all;
+  color: $neutral-white;
+
+  &:hover:not(:disabled):not(.loading) {
+    filter: brightness(1.3);
+    box-shadow: 0 4px 15px rgba($brand-5, 0.5);
+  }
+}
+
+.variant_secondary {
+  background: transparent;
+  border: 1px solid $neutral-white-20;
+  color: $neutral-7;
+
+  &:hover:not(:disabled):not(.loading) {
+    background: $neutral-white-05;
+    border-color: $neutral-white-40;
+    color: $neutral-white;
+  }
+}
+
+.variant_danger {
+  background: $danger;
+  color: $neutral-white;
+
+  &:hover:not(:disabled):not(.loading) {
+    filter: brightness(1.2);
+    box-shadow: 0 4px 15px rgba($danger, 0.5);
+  }
+}
+
+.variant_ghost {
+  background: transparent;
+  color: $neutral-white-60;
+
+  &:hover:not(:disabled):not(.loading) {
+    background: $neutral-white-10;
+    color: $neutral-white;
+  }
+}
+
+.iconOnly {
+  padding: $spacing-2xs;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+
+  &.size_sm {
+    padding: $spacing-2xs;
+  }
+  &.size_md {
+    padding: $spacing-xs;
+  }
+  &.size_lg {
+    padding: $spacing-sm;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: buttonSpinnerSpin 0.6s linear infinite;
+}
+
+@keyframes buttonSpinnerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

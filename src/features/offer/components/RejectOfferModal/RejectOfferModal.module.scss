@@ -1,0 +1,76 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.description {
+  color: $neutral-7;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.formLabel {
+  color: $neutral-white;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs;
+  border-radius: $radius-sm;
+  color: $neutral-white;
+  background-color: $neutral-white-05;
+  cursor: pointer;
+  transition: $transition-normal;
+  @include backdrop-blur;
+
+  input[type="radio"] {
+    accent-color: $brand-5;
+  }
+
+  &:hover {
+    background-color: $neutral-white-10;
+  }
+
+  &:active {
+    background-color: $neutral-white-20;
+  }
+}
+
+.otherReasonInput {
+  background: transparent;
+  border: none;
+  width: 100%;
+  color: $neutral-white;
+  transition: $transition-fast;
+  cursor: text;
+
+  &::placeholder {
+    color: $neutral-white-60;
+  }
+}
+
+.otherReasonPlaceholder {
+  color: $neutral-white-60;
+}
+
+@include mobile-only {
+  .otherReasonInput {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-sm;
+  width: 100%;
+}

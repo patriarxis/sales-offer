@@ -1,0 +1,47 @@
+@use "../../../styles/abstracts" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  @include surface-overlay($neutral-black-85);
+  @include flex-center;
+  z-index: $z-modal;
+  padding: $spacing-md;
+
+}
+
+.content {
+  @include glass-card($neutral-black-95, $neutral-white-10, $radius-xl, null);
+  max-width: $max-width-sm;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-lg;
+  border-bottom: 1px solid $neutral-white-10;
+}
+
+.title {
+  color: $neutral-white;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-lg;
+  overflow-y: auto;
+}
+
+.footer {
+  display: flex;
+  gap: $spacing-sm;
+  padding: 0 $spacing-lg $spacing-lg;
+}

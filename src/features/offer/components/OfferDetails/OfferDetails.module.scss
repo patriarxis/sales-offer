@@ -1,0 +1,48 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.sectionTitle {
+  margin: 0;
+}
+
+.detailsBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsRows {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  color: $neutral-6;
+  padding: $spacing-xs 0;
+  border-bottom: 1px solid $neutral-white-10;
+
+  > span:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    @include desktop-up {
+      flex: 1 1 70%;
+      white-space: nowrap;
+    }
+  }
+}
+
+.detailsAmount {
+  color: $neutral-8;
+  text-align: right;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}

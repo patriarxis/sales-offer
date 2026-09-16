@@ -1,0 +1,88 @@
+@use "../../../../styles/abstracts" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+  width: 100%;
+  text-align: center;
+}
+
+.salesContact {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: $spacing-xs;
+  width: 100%;
+  background: $neutral-2;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  text-align: left;
+}
+
+.salesHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-2xs;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  border-radius: $radius-full;
+  background-image: linear-gradient(to top, $neutral-3, $neutral-4);
+  color: $neutral-white;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  box-shadow: $shadow-md;
+  @include flex-center;
+}
+
+.salesName {
+  color: $neutral-white;
+}
+
+.salesTitle {
+  color: $neutral-7;
+}
+
+.salesRows {
+  display: flex;
+  flex-direction: column;
+}
+
+.salesRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $neutral-6;
+  padding: $spacing-xs 0;
+  border-bottom: 1px solid $neutral-white-10;
+
+  > span:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.salesRowValue {
+  color: $neutral-white;
+  text-align: right;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a.salesRowValue {
+  text-decoration: underline;
+  transition: opacity $transition-normal;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

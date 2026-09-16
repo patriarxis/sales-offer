@@ -1,0 +1,241 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// Shared UI patterns built on top of the design tokens. Components should
+// compose these instead of redefining paddings/borders/colors locally, so the
+// UI stays consistent. Ported from the canonical fitpass-gyms design system,
+// extended with app-specific patterns (glass-card, shimmer, gradient-text…).
+
+// ---------------------------------------------------------------------------
+// Layout
+// ---------------------------------------------------------------------------
+
+@mixin container($max-width: $layout-container) {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
+  padding-inline: $spacing-sm;
+
+  @include sm-up {
+    padding-inline: $spacing-md;
+  }
+}
+
+@mixin section-block {
+  padding-block: $spacing-3xl;
+
+  @include lg-up {
+    padding-block: $spacing-4xl;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Typography roles (complement the h1–h6 / p-* mixins in _mixins.scss)
+// ---------------------------------------------------------------------------
+
+@mixin eyebrow {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+@mixin text-secondary {
+  color: $neutral-white-70;
+}
+
+@mixin text-tertiary {
+  color: $neutral-white-50;
+}
+
+// Gradient (clipped) text — title fades from $from to $to.
+@mixin gradient-text($from: $neutral-white, $to: $accent) {
+  background: linear-gradient(90deg, $from 0%, $to 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// ---------------------------------------------------------------------------
+// Surfaces
+// ---------------------------------------------------------------------------
+
+@mixin backdrop-blur($blur: $surface-blur) {
+  backdrop-filter: blur($blur);
+}
+
+// Dotted black track (language switcher, etc.).
+@mixin page-dot-canvas {
+  background-color: $neutral-black;
+  background-image: radial-gradient($neutral-white-10 0.1rem, transparent 0.01rem);
+  background-size: 0.5rem 0.5rem;
+}
+
+// Light translucent card surface.
+@mixin surface-card {
+  background: $neutral-white-05;
+  border-radius: $radius-lg;
+  @include backdrop-blur;
+}
+
+@mixin interactive-card {
+  @include surface-card;
+  transition:
+    transform $transition-normal,
+    box-shadow $transition-normal;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px $neutral-black-30;
+    }
+  }
+}
+
+// Dark blurred "glass" panel — state-view cards, modal content, request card.
+@mixin glass-card(
+  $bg: rgba($neutral-1, 0.6),
+  $border: $neutral-white-10,
+  $radius: $radius-xl,
+  $padding: $spacing-lg
+) {
+  background: $bg;
+  @include backdrop-blur;
+  border: 1px solid $border;
+  border-radius: $radius;
+  box-shadow: $shadow-xl;
+
+  @if $padding != null {
+    padding: $padding;
+  }
+}
+
+// Full-screen dimmed scrim.
+@mixin surface-overlay($bg: $neutral-black-60, $blur: $surface-blur) {
+  background: $bg;
+  @include backdrop-blur($blur);
+}
+
+// Soft colored glow used behind status icons.
+@mixin status-icon-glow($color, $alpha: 0.16) {
+  box-shadow: 0 1rem 3rem rgba($color, $alpha);
+}
+
+// ---------------------------------------------------------------------------
+// Interactive elements
+// ---------------------------------------------------------------------------
+
+@mixin pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2xs;
+  border-radius: $radius-full;
+  white-space: nowrap;
+  font-family: $font-primary;
+}
+
+// Signature Up Hellas CTA: red-to-orange gradient pill.
+@mixin cta-gradient {
+  @include pill;
+  border: 1px solid $accent;
+  background-image: linear-gradient(-45deg, $accent, $brand-5);
+  color: $neutral-white;
+  font-weight: $font-weight-semibold;
+  transition: filter $transition-normal;
+
+  @media (hover: hover) {
+    &:hover {
+      background-image: linear-gradient(-45deg, $brand-5, $accent);
+    }
+  }
+}
+
+@mixin ghost-button {
+  @include pill;
+  border: 1px solid $neutral-white-20;
+  background: transparent;
+  color: $neutral-white;
+  font-weight: $font-weight-semibold;
+  transition:
+    border-color $transition-normal,
+    background-color $transition-normal;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: $neutral-white-40;
+      background: $neutral-white-05;
+    }
+  }
+}
+
+@mixin focus-ring {
+  outline: 2px solid $accent;
+  outline-offset: 2px;
+}
+
+// ---------------------------------------------------------------------------
+// Utilities
+// ---------------------------------------------------------------------------
+
+// Loading shimmer sweep (pairs with the `shimmer` keyframes in _animations).
+@mixin shimmer($base: $neutral-white-05, $highlight: rgba(255, 255, 255, 0.18), $duration: 1.8s) {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    $highlight 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer $duration ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  overflow: hidden;
+}
+
+@mixin scroll-row {
+  display: flex;
+  gap: $spacing-xs;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: $neutral-white-20 transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $neutral-white-20;
+    border-radius: $radius-full;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

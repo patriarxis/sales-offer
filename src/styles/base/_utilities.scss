@@ -1,0 +1,25 @@
+@use "../abstracts/index" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: $spacing-lg;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: $max-width-lg;
+  padding: 0 $spacing-md;
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: $neutral-white-10;
+}

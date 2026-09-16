@@ -1,0 +1,25 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.description {
+  color: $neutral-7;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.confirmationText {
+  color: $neutral-5;
+}
+
+.errorText {
+  color: $danger;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-sm;
+  width: 100%;
+}

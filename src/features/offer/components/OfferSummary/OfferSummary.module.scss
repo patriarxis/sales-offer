@@ -1,0 +1,7 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}

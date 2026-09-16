@@ -1,0 +1,118 @@
+@use "../../../styles/abstracts/index" as *;
+
+.pageShell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.pageBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -10vh;
+  height: 110dvh;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &::before {
+    background: radial-gradient(
+      140% 55% at 50% 108%,
+      $brand-5 22%,
+      $product-fitpass-5 48%,
+      $product-flexone-primary-3 78%,
+      transparent 100%
+    );
+    transform: translateY(28%) scaleY(0.35);
+    transform-origin: center bottom;
+    opacity: 0;
+    animation:
+      bg-rise-in 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+      bg-breathe-slow 7s ease-in-out 2s infinite;
+  }
+
+  &::after {
+    background: radial-gradient(
+      115% 42% at 50% 100%,
+      rgba($brand-5, 0.55) 0%,
+      rgba($product-fitpass-5, 0.28) 42%,
+      rgba($product-flexone-primary-3, 0.18) 68%,
+      transparent 100%
+    );
+    opacity: 0;
+    transform: translateY(18%) scale(0.96);
+    transform-origin: center bottom;
+    animation:
+      bg-glow-in 2.2s ease-out 0.35s forwards,
+      bg-breathe-fast 5s ease-in-out 2.5s infinite;
+  }
+}
+
+@keyframes bg-rise-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes bg-glow-in {
+  to {
+    opacity: 0.9;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bg-breathe-slow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: translateY(4%) scaleY(0.92);
+  }
+}
+
+@keyframes bg-breathe-fast {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: translateY(-4%) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pageBackground {
+    &::before {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    &::after {
+      animation: none;
+      opacity: 0.85;
+      transform: none;
+    }
+  }
+}

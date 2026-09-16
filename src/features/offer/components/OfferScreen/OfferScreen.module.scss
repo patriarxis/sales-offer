@@ -1,0 +1,17 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.viewWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-lg 0;
+  width: 100%;
+}
+
+.viewContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}

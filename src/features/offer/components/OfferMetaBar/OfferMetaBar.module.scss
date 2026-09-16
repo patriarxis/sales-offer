@@ -1,0 +1,79 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.metaBar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  animation: fadeInUp 0.3s ease-out 0.15s backwards;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  min-height: 2rem;
+  padding: $spacing-xs $spacing-sm $spacing-xs $spacing-xs;
+  background-color: $neutral-white-05;
+  border-radius: $radius-full;
+  color: $neutral-white-80;
+  @include backdrop-blur;
+}
+
+.metaIcon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: $neutral-white-80;
+}
+
+.metaText {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.warning .metaIcon {
+  color: $warning;
+}
+
+.pendingDot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: $warning;
+  flex-shrink: 0;
+  animation: pendingPulse 1.8s ease-in-out infinite;
+}
+
+.success .metaIcon {
+  color: $success;
+}
+
+.danger .metaIcon {
+  color: $danger;
+}
+
+.countdown {
+  --countdown-digit-font-size: #{$font-size-xs};
+
+  gap: $spacing-xs;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+@keyframes pendingPulse {
+  0% {
+    box-shadow: 0 0 0 0 $warning-bg;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0.5rem rgba($warning, 0);
+  }
+}

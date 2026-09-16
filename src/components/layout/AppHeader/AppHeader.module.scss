@@ -1,0 +1,46 @@
+@use "../../../styles/abstracts/index" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: $spacing-sm 0;
+}
+
+.headerContent {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: $spacing-sm;
+  width: 100%;
+  min-height: 3rem;
+  animation: fadeInUp 0.3s ease-out 0.1s backwards;
+}
+
+.headerLabel {
+  color: $neutral-white-60;
+  justify-self: start;
+  align-self: center;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  line-height: 0;
+}
+
+.logoImg {
+  height: 3rem;
+  width: auto;
+  display: block;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: end;
+}

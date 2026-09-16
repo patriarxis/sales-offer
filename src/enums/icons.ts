@@ -1,0 +1,16 @@
+export enum ICONS {
+  CALENDAR = "calendar",
+  DOWNLOAD = "download",
+  CHECK_CIRCLE = "check-circle",
+  X_CIRCLE = "x-circle",
+  CLOCK = "clock",
+  HASH = "hash",
+  LOCK = "lock",
+  WARNING = "warning",
+  LINKEDIN = "linkedin",
+  INSTAGRAM = "instagram",
+  FACEBOOK = "facebook",
+  TIKTOK = "tiktok",
+  YOUTUBE = "youtube",
+  SPOTIFY = "spotify",
+}

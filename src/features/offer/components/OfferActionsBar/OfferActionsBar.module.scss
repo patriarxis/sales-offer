@@ -1,0 +1,20 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.floatingActionBar {
+  position: fixed;
+  bottom: $spacing-lg;
+  left: 50%;
+  background: rgba($neutral-1, 0.5);
+  backdrop-filter: blur(0.5rem);
+  padding: $spacing-xs;
+  border-radius: $radius-full;
+  border: 1px solid $neutral-white-10;
+  display: flex;
+  gap: $spacing-xs;
+  z-index: $z-floating-action-bar;
+  box-shadow: 0 10px 40px $neutral-black-50;
+  width: max-content;
+  max-width: $max-width-md;
+  justify-content: center;
+  align-items: center;
+}

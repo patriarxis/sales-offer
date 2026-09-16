@@ -1,0 +1,64 @@
+@use "../../../../styles/abstracts/index" as *;
+
+.bar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid $neutral-white-10;
+  background: rgba($neutral-1, 0.72);
+  @include backdrop-blur;
+}
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  width: 100%;
+  min-height: 2.75rem;
+  padding-block: $spacing-2xs;
+}
+
+.switcher {
+  display: inline-flex;
+  margin: 0;
+}
+
+.select {
+  appearance: none;
+  max-width: 16rem;
+  padding: $spacing-2xs $spacing-lg $spacing-2xs $spacing-xs;
+  border: 1px solid $neutral-white-20;
+  border-radius: $radius-md;
+  background:
+    linear-gradient(45deg, transparent 50%, $neutral-white-70 50%)
+      calc(100% - 0.85rem) calc(50% - 0.15rem) / 0.35rem 0.35rem no-repeat,
+    linear-gradient(135deg, $neutral-white-70 50%, transparent 50%)
+      calc(100% - 0.55rem) calc(50% - 0.15rem) / 0.35rem 0.35rem no-repeat,
+    $neutral-1;
+  color: $neutral-white;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $brand-5;
+    outline-offset: 2px;
+  }
+}
+
+.galleryLink {
+  color: $neutral-white-70;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color $transition-normal;
+
+  &:hover {
+    color: $neutral-white;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $brand-5;
+    outline-offset: 2px;
+  }
+}

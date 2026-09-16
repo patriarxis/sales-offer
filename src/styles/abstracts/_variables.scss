@@ -1,0 +1,292 @@
+// =============================================================================
+// Up Hellas shared design tokens — canonical set (keep in sync with the
+// fitpass-gyms design system; do not diverge). App-specific tokens that the
+// shared canon does not define live in the "App extensions" block at the end.
+// =============================================================================
+
+$neutral-1: #191919;
+$neutral-2: #333;
+$neutral-3: #4d4d4d;
+$neutral-4: #666;
+$neutral-5: grey;
+$neutral-6: #999;
+$neutral-7: #b2b2b2;
+$neutral-8: #ccc;
+$neutral-9: #e5e5e5;
+
+$neutral-black: black;
+$neutral-black-05: rgba(0, 0, 0, 0.05);
+$neutral-black-10: rgba(0, 0, 0, 0.1);
+$neutral-black-20: rgba(0, 0, 0, 0.2);
+$neutral-black-30: rgba(0, 0, 0, 0.3);
+$neutral-black-40: rgba(0, 0, 0, 0.4);
+$neutral-black-50: rgba(0, 0, 0, 0.5);
+$neutral-black-60: rgba(0, 0, 0, 0.6);
+$neutral-black-70: rgba(0, 0, 0, 0.7);
+$neutral-black-80: rgba(0, 0, 0, 0.8);
+$neutral-black-90: rgba(0, 0, 0, 0.9);
+$neutral-black-95: rgba(0, 0, 0, 0.95);
+
+$neutral-white-05: rgba(255, 255, 255, 0.05);
+$neutral-white-10: rgba(255, 255, 255, 0.1);
+$neutral-white-20: rgba(255, 255, 255, 0.2);
+$neutral-white-30: rgba(255, 255, 255, 0.3);
+$neutral-white-40: rgba(255, 255, 255, 0.4);
+$neutral-white-50: rgba(255, 255, 255, 0.5);
+$neutral-white-60: rgba(255, 255, 255, 0.6);
+$neutral-white-70: rgba(255, 255, 255, 0.7);
+$neutral-white-80: hsla(0, 0%, 100%, 0.8);
+$neutral-white-90: rgba(255, 255, 255, 0.9);
+$neutral-white-95: rgba(255, 255, 255, 0.95);
+$neutral-white: white;
+
+$brand-1: #331b00;
+$brand-2: #663500;
+$brand-3: #995000;
+$brand-4: #cc6a00;
+$brand-5: #ff8500;
+$brand-6: #ff9d33;
+$brand-7: #ffb666;
+$brand-8: #ffce99;
+$brand-9: #ffe7cc;
+
+$product-fitpass-1: #2e0d05;
+$product-fitpass-2: #5c190a;
+$product-fitpass-3: #8a260f;
+$product-fitpass-4: #b83314;
+$product-fitpass-5: #e6441f;
+$product-fitpass-6: #eb6647;
+$product-fitpass-7: #f08c75;
+$product-fitpass-8: #f5b2a3;
+$product-fitpass-9: #fad9d1;
+
+$product-flexone-primary-1: #201023;
+$product-flexone-primary-2: #402145;
+$product-flexone-primary-3: #603168;
+$product-flexone-primary-4: #8f499c;
+$product-flexone-primary-5: #9f51ae;
+$product-flexone-primary-6: #b274be;
+$product-flexone-primary-7: #c697ce;
+$product-flexone-primary-8: #d9bade;
+$product-flexone-primary-9: #ecdcef;
+
+$product-flexone-secondary-1: #071e2c;
+$product-flexone-secondary-2: #0f3d57;
+$product-flexone-secondary-3: #165b83;
+$product-flexone-secondary-4: #1d79af;
+$product-flexone-secondary-5: #2598da;
+$product-flexone-secondary-6: #58b0e3;
+$product-flexone-secondary-7: #7cc1e9;
+$product-flexone-secondary-8: #a8d6f0;
+$product-flexone-secondary-9: #d3eaf8;
+
+$product-gift-1: #171c1c;
+$product-gift-2: #2e3837;
+$product-gift-3: #485756;
+$product-gift-4: #5c606e;
+$product-gift-5: #738c8a;
+$product-gift-6: #8fa3a1;
+$product-gift-7: #abbab9;
+$product-gift-8: #c7d1d0;
+$product-gift-9: #e3e8e8;
+
+$products-expense-1: #011732;
+$products-expense-2: #032e63;
+$products-expense-3: #054da7;
+$products-expense-4: #065bc6;
+$products-expense-5: #0772f8;
+$products-expense-6: #398ef9;
+$products-expense-7: #6aaafb;
+$products-expense-8: #9cc7fc;
+$products-expense-9: #cde3fe;
+
+$up-coop-product-family-eat: #f59100;
+$up-coop-product-family-gift: #c50e1f;
+$up-coop-product-family-employees: #009ee3;
+$up-coop-product-family-up-cheque-lire: #0070b8;
+$up-coop-product-family-up-culture: #c5007b;
+$up-coop-content-pillar-economic: #51487e;
+$up-coop-content-pillar-environmental: #01b19e;
+$up-coop-content-pillar-social: #79bae3;
+$up-coop-content-pillar-passpartout-1: #f2c023;
+$up-coop-content-pillar-passpartout-2: #ea5f54;
+
+$layout-container: 1240px;
+$layout-container-xl: 1920px;
+
+$radius-xs: 0.25rem;
+$radius-sm: 0.5rem;
+$radius-md: 0.75rem;
+$radius-lg: 1rem;
+$radius-xl: 1.5rem;
+$radius-full: 999px;
+
+$spacing-2xs: 0.25rem;
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 2.5rem;
+$spacing-2xl: 3rem;
+$spacing-3xl: 4rem;
+$spacing-4xl: 6rem;
+$spacing-5xl: 8rem;
+
+$font-primary:
+  var(--font-linotte),
+  Linotte,
+  Arial,
+  sans-serif;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 2.5rem;
+$font-size-5xl: 3.5rem;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-sm: 100%;
+$line-height-md: 120%;
+$line-height-lg: 140%;
+
+$heading-h1: $font-size-5xl;
+$heading-h2: $font-size-4xl;
+$heading-h3: $font-size-3xl;
+$heading-h4: $font-size-2xl;
+$heading-h5: $font-size-xl;
+$heading-h6: $font-size-lg;
+
+$paragraph-lg: $font-size-lg;
+$paragraph-base: $font-size-base;
+$paragraph-sm: $font-size-sm;
+$paragraph-xs: $font-size-xs;
+
+$breakpoint-sm: 640px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1280px;
+
+$brand-primary-5: $brand-5;
+$fitpass-primary-5: $product-fitpass-5;
+
+// Semantic accent — use for icons, links, highlights, and interactive emphasis.
+$accent: $product-fitpass-5;
+$accent-hover: $product-fitpass-4;
+
+$border-radius-sm: $radius-sm;
+$border-radius-md: $radius-md;
+$border-radius-lg: $radius-lg;
+$border-radius-full: $radius-full;
+
+$black-40: $neutral-black-40;
+
+$z-search-backdrop: 230;
+$z-search-overlay: 240;
+$z-search-elevated: 250;
+
+$transition-normal: 0.2s ease-in-out;
+
+$max-width-sm: 32rem;
+$max-width-md: 42rem;
+$max-width-2xl: 56rem;
+
+$line-height-tight: 120%;
+$font-weight-normal: $font-weight-regular;
+
+// =============================================================================
+// App extensions — tokens this app needs that the shared canon does not define.
+// Kept here (not in the canonical block above) so the canon stays portable.
+// =============================================================================
+
+// Semantic status colors
+$danger: #dc2626;
+$danger-hover: #b91c1c;
+$danger-bg: rgba(220, 38, 38, 0.1);
+$danger-1: #7f1d1d;
+$success: #10b981;
+$success-bg: rgba(16, 185, 129, 0.1);
+$warning: #f59e0b;
+$warning-bg: rgba(245, 158, 11, 0.12);
+
+// Extra font weights
+$font-weight-medium: 500;
+$font-weight-extrabold: 800;
+
+// Extra line height (canon covers tight 120% / md 120% / lg 140%)
+$line-height-relaxed: 160%;
+
+// Extra opacity steps actually used by the app
+$neutral-white-03: rgba(255, 255, 255, 0.03);
+$neutral-black-03: rgba(0, 0, 0, 0.03);
+$neutral-black-85: rgba(0, 0, 0, 0.85);
+
+// Extra radii (the app's old xl/2xl/3xl values)
+$radius-2xl: 2rem;
+$radius-3xl: 4rem;
+$radius-4xl: 8rem;
+
+// Extra spacing step
+$spacing-6xl: 10rem;
+
+// Extra breakpoints
+$breakpoint-xl: 1440px;
+$breakpoint-2xl: 1920px;
+
+// App max-width scale (richer than canon's sm/md/2xl; overrides those three
+// to the app's existing values so layouts are preserved exactly).
+$max-width-xs: 20rem;
+$max-width-sm: 30rem;
+$max-width-md: 40rem;
+$max-width-lg: 50rem;
+$max-width-xl: 60rem;
+$max-width-2xl: 72rem;
+
+// Container max-widths
+$container-sm: 640px;
+$container-md: 768px;
+$container-lg: 1024px;
+$container-xl: 1440px;
+
+// Z-index scale
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+$z-overlay: 1100;
+$z-floating-action-bar: 100;
+
+// Translucent surfaces
+$surface-blur: 1rem;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl:
+  0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Transition durations (canon ships $transition-normal)
+$transition-fast: 0.05s;
+$transition-slow: 0.4s ease-in-out;
+
+// Product gradients (rebuilt on canon color names, values preserved)
+$gradient-brand-all: linear-gradient(to right, $brand-5, $brand-3);
+$gradient-flexone: linear-gradient(to right, $product-flexone-primary-4, $product-flexone-primary-6);
+$gradient-fitpass: linear-gradient(to right, $product-fitpass-5, $product-fitpass-3);
+$gradient-gift: linear-gradient(135deg, $product-gift-3, $product-gift-5);
+$gradient-expense: linear-gradient(to right, $products-expense-3, $products-expense-5);

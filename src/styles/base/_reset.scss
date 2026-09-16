@@ -1,0 +1,60 @@
+@use "../abstracts/index" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: $neutral-white-20 transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+html {
+  font-size: clamp(14px, 1.5vw, 16px);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  color: $neutral-white;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-lg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $neutral-1;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $neutral-white-20;
+  border-radius: $radius-full;
+
+  &:hover {
+    background-color: $neutral-white-40;
+  }
+}

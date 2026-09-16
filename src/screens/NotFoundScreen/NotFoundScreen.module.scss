@@ -1,0 +1,82 @@
+@use "../../styles/abstracts/index" as *;
+
+.content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  text-align: center;
+  padding: $spacing-2xl $spacing-sm;
+  max-width: $max-width-lg;
+  width: 100%;
+}
+
+.code {
+  font-weight: $font-weight-extrabold;
+  font-size: clamp(5rem, 14vw, 9rem);
+  color: $brand-5;
+  font-variant-numeric: tabular-nums;
+  text-shadow:
+    0 0 2px rgba(255, 174, 66, 0.85), // bespoke glow
+    0 0 14px rgba(255, 140, 0, 0.55), // bespoke glow
+    0 0 28px rgba(255, 110, 0, 0.35); // bespoke glow
+  animation: ledFlicker 5s ease-in-out infinite;
+}
+
+.title {
+  color: $neutral-white;
+}
+
+.message {
+  color: $neutral-white-80;
+  max-width: $max-width-md;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+}
+
+@keyframes ledFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  43% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.55;
+  }
+
+  47% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  86% {
+    opacity: 0.7;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code {
+    animation: none;
+  }
+}
