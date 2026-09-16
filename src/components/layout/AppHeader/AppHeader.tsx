@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher/LanguageSwitcher";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -28,7 +29,9 @@ export const AppHeader = () => {
             />
           </Link>
           <div className={styles.headerActions}>
-            <LanguageSwitcher />
+            <Suspense fallback={null}>
+              <LanguageSwitcher />
+            </Suspense>
           </div>
         </div>
       </div>

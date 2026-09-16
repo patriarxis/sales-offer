@@ -53,7 +53,11 @@ export default async function Home({ params, searchParams }: HomeProps) {
   const offerToken = typeof sp?.offerToken === "string" ? sp.offerToken : null;
 
   if (!offerToken) {
-    return <DemoGallery items={getDemoGalleryItems()} />;
+    return (
+      <Suspense fallback={null}>
+        <DemoGallery items={getDemoGalleryItems()} />
+      </Suspense>
+    );
   }
 
   try {
